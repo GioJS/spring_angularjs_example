@@ -1,0 +1,37 @@
+<div class="container fill">
+	
+	
+	<form class="ng-hide animation-show-hide" ng-show="$root.show" ng-submit="$ctrl.add()">
+		
+		<h2>Add new customer</h2>
+		<div class="form-group">
+			<label for="firstname">Firstname: </label>
+			<input id="firstname" class="form-control"  type="text" ng-model="$ctrl.firstname" placeholder="" />
+		</div>
+		<div class="form-group">
+			<label for="lastname">Lastname:</label>
+			<input id="lastname" class="form-control" type="text" ng-model="$ctrl.lastname" placeholder="" />
+		</div>
+		<div class="form-group">
+			<label for="address">Address:</label>
+			<input id="address" class="form-control" type="text" ng-model="$ctrl.address" placeholder="" />
+		</div>
+		<div class="form-group">
+			<label for="phone">Phone:</label>
+			<input id="phone" class="form-control" type="tel" ng-model="$ctrl.phone" placeholder="" />
+		</div>
+		<div class="form-group">
+			<label for="sex">Sex:</label>
+			
+			  <label class="radio-inline"><input type="radio" ng-model="$ctrl.sex" checked value="M" id="sex">M</label>
+			  <label class="radio-inline"><input type="radio" ng-model="$ctrl.sex" value="F" id="sex">F</label>
+			
+		</div>
+
+		<div class="form-group float-right">
+			<input class="btn btn-success btn-sm" type="submit" value="Add" />
+			<button type="button" class="btn btn-danger btn-sm" ng-click="$ctrl.close()">Close</button>
+		</div>
+		
+	</form>
+</div>

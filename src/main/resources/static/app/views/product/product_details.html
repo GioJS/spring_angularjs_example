@@ -1,0 +1,20 @@
+<form ng-submit="updateProduct(product)">
+    <h3>Product details</h3>
+    <div class="form-group">
+        <label for="name">Name: </label>
+        <input ng-disabled="!editable" id="name" class="form-control"  type="text" ng-model="product.name"  />
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea ng-disabled="!editable" id="description" class="form-control" type="text" ng-model="product.description"  ></textarea>
+    </div>
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input ng-disabled="!editable" id="price" class="form-control" type="number" step="0.01"  ng-model="product.price"  />
+    </div>
+
+    <div class="form-group float-left">
+        <button ng-show="!editable" type="button" class="btn btn-primary btn-sm" editable>Edit</button>
+        <input ng-show="editable" type="submit" class="btn btn-success btn-sm" value="Save" />
+    </div>
+</form>
