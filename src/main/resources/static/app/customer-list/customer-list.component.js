@@ -86,15 +86,7 @@ angular.module('customerList')
                     });
                 }
             }],
-            link: function ($scope, $elem, $attrs) {
-                //console.log($attrs)
-                $scope.$watch($attrs.ngShow, function (newVal, oldVal) {
-                    if (newVal !== oldVal) {
-                        $scope.editable = false;
-                    }
-
-                });
-            },
+            link: watcher,
             templateUrl: 'app/views/customer/customer_details.html'
         }
     });

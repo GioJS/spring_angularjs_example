@@ -19,6 +19,7 @@ public interface CustomerRepository extends CrudRepository<Customer, Long> {
 	//deprecated
     @Query("select count(p) from Customer c join c.products p on p.id = :id")
     Integer countCustomersByProductId(@Param("id") Integer id);
+
     @Query("select new com.example.angularspring.repositories.utils.GroupByEntry(c.firstname, sum(p.price)) from Customer c join c.products p group by c.id")
     List<GroupByEntry<String, Double>> productsPricesSum();
 
