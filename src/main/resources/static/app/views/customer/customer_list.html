@@ -14,7 +14,8 @@
                 <div class="float-pills my-col-1">{{customer.lastname}}</div>
             </div>
 
-            <customer-details class="ng-hide animation-show-hide" ng-show="customer.showDetails" customer="customer"></customer-details>
+            <customer-details class="ng-hide animation-show-hide" ng-show="customer.showDetails"
+                              customer="customer"></customer-details>
 
             <div id="{{customer.id}}" class="modal fade" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
@@ -41,8 +42,8 @@
             <div class="btn-group btn-group-justified float-right">
                 <div class="btn-group">
                     <button ng-click="$ctrl.showDetails(customer)"
-                       ng-class="{'btn-primary':!customer.showDetails , 'btn-danger':customer.showDetails}"
-                       class="btn btn-sm" href="#">
+                            ng-class="{'btn-primary':!customer.showDetails , 'btn-danger':customer.showDetails}"
+                            class="btn btn-sm" href="#">
                         <i ng-class="{'fa-eye':!customer.showDetails, 'fa-eye-slash':customer.showDetails}"
                            class="fa lg" aria-hidden="true"></i></button>
                 </div>
@@ -67,5 +68,4 @@
     </div>
 
 
-</div>
 </div>
