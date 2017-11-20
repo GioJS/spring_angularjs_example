@@ -2,15 +2,17 @@
 angular.module('stats').directive('customerPrices', function () {
     return {
         restrict: 'A',
+        scope: true,
         controller: ['$rootScope', '$scope', 'Stats', function ($rootScope, $scope, Stats) {
-            $scope.refreshPCS = function () {
+            $scope.refresh = function () {
                 Stats.getPricesSum().then(function (result) {
-                    $scope.pcs_labels = result.data.names;
-                    $scope.pcs_data = result.data.values;
+                    $scope.labels = result.data.names;
+                    $scope.data = result.data.values;
 
-                    $scope.pcs_options = {
+                    $scope.options = {
                         responsive: true
                     };
+
                 }, function (error) {
                     if (error.data == null) {
                         message($rootScope, 'alert-danger', 'server is down.');
@@ -23,7 +25,7 @@ angular.module('stats').directive('customerPrices', function () {
                 });
 
             };
-            $scope.refreshPCS();
+            $scope.refresh();
         }]
     }
 });

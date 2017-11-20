@@ -2,15 +2,16 @@
 angular.module('stats').directive('productsTrend', function () {
     return {
         restrict: 'A',
+        scope: true,
         controller: ['$rootScope', '$scope', 'Stats', function ($rootScope, $scope, Stats) {
 
-            $scope.refreshPCP = function () {
+            $scope.refresh = function () {
                 Stats.getProductTrend().then(function (result) {
 
-                    $scope.pcp_labels = result.data.names;
-                    $scope.pcp_data = result.data.values;
+                    $scope.labels = result.data.names;
+                    $scope.data = result.data.values;
 
-                    $scope.pcp_options = {
+                    $scope.options = {
                         responsive: true,
                     };
 
@@ -25,7 +26,7 @@ angular.module('stats').directive('productsTrend', function () {
                     console.log(error)
                 });
             };
-            $scope.refreshPCP();
+            $scope.refresh();
         }]
     }
 });

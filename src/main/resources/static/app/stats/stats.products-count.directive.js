@@ -3,14 +3,15 @@ angular.module('stats')
     .directive('productsCount', function () {
         return {
             restrict: 'A',
+            scope: true,
             controller: ['$rootScope', '$scope', 'Stats', function ($rootScope, $scope, Stats) {
-                $scope.refreshPCB = function () {
+                $scope.refresh = function () {
                     Stats.getProductsCounts().then(function (result) {
 
-                        $scope.pcb_labels = result.data.names;
-                        $scope.pcb_data = result.data.values;
+                        $scope.labels = result.data.names;
+                        $scope.data = result.data.values;
 
-                        $scope.pcb_options = {
+                        $scope.options = {
                             responsive: true,
                             scales: {
                                 yAxes: [{
@@ -33,7 +34,7 @@ angular.module('stats')
                         console.log(error)
                     });
                 };
-                $scope.refreshPCB();
+                $scope.refresh();
             }]
         }
     });

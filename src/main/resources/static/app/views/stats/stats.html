@@ -11,14 +11,14 @@
             <div class="carousel-item active" alt="1">
                 <div class="card card-chart d-block" products-count>
                     <div class="card-header">
-                        Number of products bought by customers <a href="#" ng-click="refreshPCB()"
+                        Number of products bought by customers <a href="#" ng-click="refresh()"
                                                                   class="btn float-right btn-primary btn-sm"><i
                             class="fa fa-refresh fa-lg" aria-hidden="true"></i></a>
                     </div>
 
                     <div class="card-body">
                         <canvas id="pcb" class="chart chart-bar"
-                                chart-data="pcb_data" chart-labels="pcb_labels" chart-options="pcb_options">
+                                chart-data="data" chart-labels="labels" chart-options="options">
                         </canvas>
                     </div>
                 </div>
@@ -27,13 +27,13 @@
             <div class="carousel-item" alt="2">
                 <div class="card card-chart d-block" products-trend>
                     <div class="card-header">
-                        Products trend <a href="#" ng-click="refreshPCP()" class="btn float-right btn-primary btn-sm"><i
+                        Products trend <a href="#" ng-click="refresh()" class="btn float-right btn-primary btn-sm"><i
                             class="fa fa-refresh fa-lg" aria-hidden="true"></i></a>
                     </div>
                     <div class="card-body">
                         <h4 class="card-title"></h4>
                         <canvas id="pcp" class="chart chart-doughnut"
-                                chart-data="pcp_data" chart-labels="pcp_labels" chart-options="pcp_options">
+                                chart-data="data" chart-labels="labels" chart-options="options">
                         </canvas>
                     </div>
                 </div>
@@ -42,13 +42,13 @@
             <div class="carousel-item" alt="3">
                 <div class="card card-chart d-block" customer-prices>
                     <div class="card-header">
-                        Total spending <a href="#" ng-click="refreshPCS()" class="btn float-right btn-primary btn-sm"><i
+                        Total spending <a href="#" ng-click="refresh()" class="btn float-right btn-primary btn-sm"><i
                             class="fa fa-refresh fa-lg" aria-hidden="true"></i></a>
                     </div>
 
                     <div class="card-body">
                         <canvas id="pcs" class="chart chart-horizontal-bar"
-                                chart-data="pcs_data" chart-labels="pcs_labels" chart-options="pcs_options">
+                                chart-data="data" chart-labels="labels" chart-options="options">
                         </canvas>
                     </div>
                 </div>
