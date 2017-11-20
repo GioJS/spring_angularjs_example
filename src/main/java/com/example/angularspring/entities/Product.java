@@ -5,10 +5,10 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="Product")
+@Table(name = "Product")
 public class Product {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
     private String description;

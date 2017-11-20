@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface ProductRepository extends CrudRepository<Product, Long>{
+public interface ProductRepository extends CrudRepository<Product, Long> {
     //deprecated
     @Query("select count(p) from Product p join p.customers c on c.id = :id")
     Integer countProductsByCustomerId(@Param("id") Integer id);

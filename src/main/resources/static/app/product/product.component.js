@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('product')
-    .component('product',{
+    .component('product', {
         templateUrl: 'app/views/product/product.html',
         controller: ['$rootScope', 'Product', function ($rootScope, productSrv) {
             this.price = 0.0;
@@ -12,7 +12,7 @@ angular.module('product')
 
             var self = this;
 
-            this.close = function() {
+            this.close = function () {
                 this.price = 0.0;
                 this.name = '';
                 this.description = '';
@@ -20,7 +20,7 @@ angular.module('product')
                 return false;
             };
 
-            this.add = function() {
+            this.add = function () {
                 //customer object
                 var product = {
                     'name': this.name,
@@ -29,7 +29,7 @@ angular.module('product')
                 };
                 //call the service to store this object with rest
 
-                productSrv.addProduct(product).then(function(result){
+                productSrv.addProduct(product).then(function (result) {
                     console.log(result);
                     self.price = 0.0;
                     self.name = '';
@@ -38,11 +38,11 @@ angular.module('product')
                     $rootScope.refreshProducts();
                     message($rootScope, 'alert-success', 'product added.');
 
-                }, function(error){
-                    if(error.data == null) {
+                }, function (error) {
+                    if (error.data == null) {
                         message($rootScope, 'alert-danger', 'server is down.');
 
-                    }else {
+                    } else {
                         message($rootScope, 'alert-danger', error.data.message);
 
                     }

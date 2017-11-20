@@ -20,36 +20,37 @@ import com.example.angularspring.repositories.CustomerRepository;
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {
-	@Autowired
-	private CustomerRepository repo;
+    @Autowired
+    private CustomerRepository repo;
 
-	//return all customers found in db
-	@RequestMapping(value="/getCustomers", produces="application/json")
-	public @ResponseBody List<Customer> getCustomers() {
-		return (List<Customer>) repo.findAll();
-	}
-	
-	//add a new customer or update an existing customer, from a json
-	@RequestMapping(value="/addCustomer", method=RequestMethod.PUT, produces="application/json")
-	@ResponseBody
-	public ResponseEntity<String> addCustomer(@RequestBody Customer customer, BindingResult res) {
-		if(res.hasErrors()) {
-			return new ResponseEntity<String>("{\"message\":\""+res.getAllErrors().toString()+"\"}", HttpStatus.INTERNAL_SERVER_ERROR);
-		}
+    //return all customers found in db
+    @RequestMapping(value = "/getCustomers", produces = "application/json")
+    public @ResponseBody
+    List<Customer> getCustomers() {
+        return (List<Customer>) repo.findAll();
+    }
+
+    //add a new customer or update an existing customer, from a json
+    @RequestMapping(value = "/addCustomer", method = RequestMethod.PUT, produces = "application/json")
+    @ResponseBody
+    public ResponseEntity<String> addCustomer(@RequestBody Customer customer, BindingResult res) {
+        if (res.hasErrors()) {
+            return new ResponseEntity<String>("{\"message\":\"" + res.getAllErrors().toString() + "\"}", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
 
         repo.save(customer);
-		return new ResponseEntity<String>("{\"message\":\"success\"}", HttpStatus.OK);
-	}
-	
-	//remove a customer by id
-	@RequestMapping(value="/removeCustomer/{id}", method=RequestMethod.DELETE)
-	@ResponseBody
-	public ResponseEntity<String> removeCustomer(@PathVariable Integer id) {
+        return new ResponseEntity<String>("{\"message\":\"success\"}", HttpStatus.OK);
+    }
+
+    //remove a customer by id
+    @RequestMapping(value = "/removeCustomer/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public ResponseEntity<String> removeCustomer(@PathVariable Integer id) {
 
         repo.deleteById(id);
-		
-		return new ResponseEntity<String>("{\"message\":\"success\"}", HttpStatus.OK);
-		
-	}
+
+        return new ResponseEntity<String>("{\"message\":\"success\"}", HttpStatus.OK);
+
+    }
 
 }

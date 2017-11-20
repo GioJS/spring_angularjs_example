@@ -8,26 +8,25 @@ angular.module('productList')
 
             var self = this;
 
-            this.showDetails = function(product) {
+            this.showDetails = function (product) {
                 product.showDetails = !product.showDetails;
             };
 
 
-            this.visible = function() {
+            this.visible = function () {
                 $rootScope.show = true;
             };
 
 
-
-            $rootScope.refreshProducts = function() {
-                productSrv.getAll().then(function(result){
+            $rootScope.refreshProducts = function () {
+                productSrv.getAll().then(function (result) {
                         self.product_list = result.data;
                     },
-                    function(error){
-                        if(error.data == null) {
+                    function (error) {
+                        if (error.data == null) {
                             message($rootScope, 'alert-danger', 'server is down.');
 
-                        }else {
+                        } else {
                             message($rootScope, 'alert-danger', error.data.message);
 
                         }
@@ -38,24 +37,24 @@ angular.module('productList')
             $rootScope.refreshProducts();
         }]
     })
-    .directive('productDetails', function() {
+    .directive('productDetails', function () {
         return {
             restrict: 'E',
-            scope:{
+            scope: {
                 product: '='
             },
-            controller: ['$scope', '$rootScope', 'Product', function($scope, $rootScope, productSrv) {
-                $scope.updateProduct = function(product) {
-                    productSrv.addProduct(product).then(function(result){
+            controller: ['$scope', '$rootScope', 'Product', function ($scope, $rootScope, productSrv) {
+                $scope.updateProduct = function (product) {
+                    productSrv.addProduct(product).then(function (result) {
                         message($rootScope, 'alert-success', 'product updated.');
 
                         console.log(result);
                         $rootScope.refreshProducts();
-                    }, function(error){
-                        if(error.data == null) {
+                    }, function (error) {
+                        if (error.data == null) {
                             message($rootScope, 'alert-danger', 'server is down.');
 
-                        }else {
+                        } else {
                             message($rootScope, 'alert-danger', error.data.message);
 
                         }

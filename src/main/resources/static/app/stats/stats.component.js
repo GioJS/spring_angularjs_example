@@ -1,13 +1,14 @@
+'use strict';
 angular.module('stats')
-       .component('statistics',{
-           templateUrl: 'app/views/stats/stats.html',
+    .component('statistics', {
+        templateUrl: 'app/views/stats/stats.html',
 
-       })
-    .directive('productsCount', function(){
+    })
+    .directive('productsCount', function () {
         return {
             restrict: 'A',
-            controller: ['$rootScope', '$scope', 'Stats', function($rootScope, $scope, Stats){
-                $scope.refreshPCB = function() {
+            controller: ['$rootScope', '$scope', 'Stats', function ($rootScope, $scope, Stats) {
+                $scope.refreshPCB = function () {
                     Stats.getProductsCounts().then(function (result) {
 
                         $scope.pcb_labels = result.data.names;
@@ -39,12 +40,12 @@ angular.module('stats')
                 $scope.refreshPCB();
             }]
         }
-    }).directive('productsTrend', function(){
+    }).directive('productsTrend', function () {
     return {
         restrict: 'A',
-        controller: ['$rootScope', '$scope', 'Stats', function($rootScope, $scope, Stats){
+        controller: ['$rootScope', '$scope', 'Stats', function ($rootScope, $scope, Stats) {
 
-            $scope.refreshPCP = function() {
+            $scope.refreshPCP = function () {
                 Stats.getProductTrend().then(function (result) {
 
                     $scope.pcp_labels = result.data.names;
@@ -71,28 +72,28 @@ angular.module('stats')
 }).directive('customerPrices', function () {
     return {
         restrict: 'A',
-        controller: ['$rootScope', '$scope', 'Stats', function($rootScope, $scope, Stats){
-          $scope.refreshPCS = function() {
-              Stats.getPricesSum().then(function (result) {
-                  $scope.pcs_labels = result.data.names;
-                  $scope.pcs_data = result.data.values;
+        controller: ['$rootScope', '$scope', 'Stats', function ($rootScope, $scope, Stats) {
+            $scope.refreshPCS = function () {
+                Stats.getPricesSum().then(function (result) {
+                    $scope.pcs_labels = result.data.names;
+                    $scope.pcs_data = result.data.values;
 
-                  $scope.pcs_options = {
-                      responsive: true
-                  };
-              }, function (error) {
-                  if (error.data == null) {
-                      message($rootScope, 'alert-danger', 'server is down.');
+                    $scope.pcs_options = {
+                        responsive: true
+                    };
+                }, function (error) {
+                    if (error.data == null) {
+                        message($rootScope, 'alert-danger', 'server is down.');
 
-                  } else {
-                      message($rootScope, 'alert-danger', error.data.message);
+                    } else {
+                        message($rootScope, 'alert-danger', error.data.message);
 
-                  }
-                  console.log(error)
-              });
+                    }
+                    console.log(error)
+                });
 
-          };
-          $scope.refreshPCS();
+            };
+            $scope.refreshPCS();
         }]
     }
 });

@@ -35,7 +35,7 @@ left-pills {
     width: auto;
 }
 
-.card-chart{
+.card-chart {
     width: 80%;
     display: block;
     margin: 50px auto 10px;
@@ -44,7 +44,6 @@ left-pills {
 .after-navbar {
     margin-top: 60px;
 }
-
 
 .footer {
 
@@ -66,21 +65,21 @@ left-pills {
 }
 
 .animation-show-hide {
-    -moz-transition:all linear 0.2s;
-    -o-transition:all linear 0.2s;
-    transition:all linear 0.2s;
-    display:block!important;
-    -webkit-transition:all linear 0.2s;
-    opacity:1;
+    -moz-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+    display: block !important;
+    -webkit-transition: all linear 0.2s;
+    opacity: 1;
 }
 
 .animation-show-hide.ng-hide-add,
 .animation-show-hide.ng-hide-remove {
-    display:block!important;
+    display: block !important;
 }
 
 .animation-show-hide.ng-hide {
-    opacity:0;
+    opacity: 0;
 }
 
 

@@ -5,6 +5,7 @@ public class GroupByEntry<E, T> {
     public E getId() {
         return id;
     }
+
     public void setId(E id) {
         this.id = id;
     }

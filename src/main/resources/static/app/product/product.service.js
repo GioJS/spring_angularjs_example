@@ -2,12 +2,12 @@
 //service factory for rest requests to spring
 angular.module('product')
     .factory('Product', ['$http',
-        function($http) {
+        function ($http) {
             return {
-                getAll: function() {
+                getAll: function () {
                     return $http.get('/products/getProducts');
                 },
-                addProduct: function(product) {
+                addProduct: function (product) {
                     return $http.put('/products/addProduct', product);
                 }
             };

@@ -68,10 +68,10 @@ angular.module('customerList')
             },
             controller: ['$scope', '$rootScope', 'Customer', function ($scope, $rootScope, customerSrv) {
 
-                $scope.changeSex = function(customer){
-                    if(customer.sex == 'M'){
+                $scope.changeSex = function (customer) {
+                    if (customer.sex == 'M') {
                         customer.sex = 'F';
-                    }else {
+                    } else {
                         customer.sex = 'M';
                     }
                 };

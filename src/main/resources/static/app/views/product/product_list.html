@@ -3,7 +3,8 @@
     <div class="input-group mb-2 mb-sm-0">
         <div class="input-group-addon">
             <i class="fa fa-search fa-lg" aria-hidden="true"></i></div>
-        <input class="form-control" type="text" id="search" ng-model="$ctrl.searchQuery" placeholder="Search a product..." />
+        <input class="form-control" type="text" id="search" ng-model="$ctrl.searchQuery"
+               placeholder="Search a product..."/>
     </div>
     <ul class="list-group list-margin">
         <li ng-repeat="product in $ctrl.product_list | filter: $ctrl.searchQuery" class="list-group-item">
@@ -14,10 +15,14 @@
                     <div class="float-pills my-col-1">{{product.price | currency}}</div>
                 </div>
             </div>
-            <product-details class="ng-hide animation-show-hide" ng-show="product.showDetails" product="product"></product-details>
+            <product-details class="ng-hide animation-show-hide" ng-show="product.showDetails"
+                             product="product"></product-details>
             <span class="float-right">
-                <a ng-click="$ctrl.showDetails(product)" ng-class="{'btn-primary':!product.showDetails , 'btn-danger':product.showDetails}" class="btn btn-sm" href="#">
-					<i ng-class="{'fa-eye':!product.showDetails, 'fa-eye-slash':product.showDetails}" class="fa fa-lg" aria-hidden="true"></i></a>
+                <a ng-click="$ctrl.showDetails(product)"
+                   ng-class="{'btn-primary':!product.showDetails , 'btn-danger':product.showDetails}" class="btn btn-sm"
+                   href="#">
+					<i ng-class="{'fa-eye':!product.showDetails, 'fa-eye-slash':product.showDetails}" class="fa fa-lg"
+                       aria-hidden="true"></i></a>
 			</span>
         </li>
     </ul>

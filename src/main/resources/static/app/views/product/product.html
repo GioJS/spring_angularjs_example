@@ -6,20 +6,22 @@
         <h2>Add new product</h2>
         <div class="form-group">
             <label for="name">Name: </label>
-            <input id="name" class="form-control"  type="text" ng-model="$ctrl.name" placeholder="" />
+            <input id="name" class="form-control" type="text" ng-model="$ctrl.name" placeholder=""/>
         </div>
         <div class="form-group">
             <label for="description">Description:</label>
-            <textarea id="description" class="form-control" type="text" ng-model="$ctrl.description" placeholder=""></textarea>
+            <textarea id="description" class="form-control" type="text" ng-model="$ctrl.description"
+                      placeholder=""></textarea>
         </div>
         <div class="form-group">
             <label for="price">Price:</label>
-            <input id="price" class="form-control" type="number" ng-model="$ctrl.price" step="0.01" min="0.0" placeholder="" />
+            <input id="price" class="form-control" type="number" ng-model="$ctrl.price" step="0.01" min="0.0"
+                   placeholder=""/>
         </div>
 
 
         <div class="form-group float-right">
-            <input class="btn btn-success btn-sm" type="submit" value="Add" />
+            <input class="btn btn-success btn-sm" type="submit" value="Add"/>
             <button type="button" class="btn btn-danger btn-sm" ng-click="$ctrl.close()">Close</button>
         </div>
 
