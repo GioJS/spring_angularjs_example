@@ -44,7 +44,7 @@ angular.module('customer')
 					   self.lastname = '';
 					   self.address = '';
 					   self.phone = '';
-					   self.sex = '';
+					   self.sex = 'M';
 					   $rootScope.show = false;
 					   $rootScope.refreshCustomers();
 					   message($rootScope, 'alert-success', 'customer added.');

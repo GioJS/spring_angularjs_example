@@ -22,10 +22,17 @@
 		</div>
 		<div class="form-group">
 			<label>Sex:</label>
-			
-			  <label class="radio-inline"><input type="radio" ng-model="$ctrl.sex"  value="M">M</label>
-			  <label class="radio-inline"><input type="radio" ng-model="$ctrl.sex" value="F">F</label>
-			
+			<div class = "btn-group" data-toggle = "buttons">
+				<label ng-click = "$ctrl.sex='M'" class = "btn btn-sm btn-primary">
+					<input type = "radio" checked value="M" name="sex" ng-model="$ctrl.sex"> M
+				</label>
+
+				<label ng-click = "$ctrl.sex='F'" class = "btn btn-sm btn-primary">
+					<input type = "radio" value="F" name="sex" ng-model="$ctrl.sex"> F
+				</label>
+
+            </div>
+
 		</div>
 
 		<div class="form-group float-right">
@@ -34,4 +41,5 @@
 		</div>
 		
 	</form>
+
 </div>
