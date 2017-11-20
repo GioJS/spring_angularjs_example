@@ -34,12 +34,4 @@ public class ProductController {
         repo.save(product);
         return new ResponseEntity<String>("{\"message\":\"success\"}", HttpStatus.OK);
     }
-
-    @RequestMapping("/itemsCount/{id}")
-    //@ResponseBody
-    public Integer getItemsCount(@PathVariable Integer id) {
-        return repo.countProductsByCustomerId(id);
-    }
-
-
 }

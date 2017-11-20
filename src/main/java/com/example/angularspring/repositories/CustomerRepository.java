@@ -12,9 +12,6 @@ import java.util.List;
 
 //CrudRepository<Resource, ID>
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
-
-	@Transactional
-	void deleteById(Integer id);
 	//deprecated
     @Query("select count(p) from Customer c join c.products p on p.id = :id")
     Integer countCustomersByProductId(@Param("id") Integer id);

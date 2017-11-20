@@ -45,10 +45,13 @@ public class CustomerController {
     //remove a customer by id
     @RequestMapping(value = "/removeCustomer/{id}", method = RequestMethod.DELETE)
     //@ResponseBody
-    public ResponseEntity<String> removeCustomer(@PathVariable Integer id) {
+    public ResponseEntity<String> removeCustomer(@PathVariable Long id) {
 
-        repo.deleteById(id);
-
+        Customer c = repo.findOne(id);
+        if(c == null) {
+            return new ResponseEntity<String>("{\"message\":\"customer not found\"}", HttpStatus.NOT_FOUND);
+        }
+        repo.delete(c);
         return new ResponseEntity<String>("{\"message\":\"success\"}", HttpStatus.OK);
 
     }
