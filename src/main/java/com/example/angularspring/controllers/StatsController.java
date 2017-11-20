@@ -25,7 +25,7 @@ public class StatsController {
 
 
     @RequestMapping(value = "/getCustomerSumPrices", produces = "application/json")
-    @ResponseBody
+    //@ResponseBody @RestController is assumed @ResponseBody
     public ChartData<Double> getCustomerSumPrices() {
         List<GroupByEntry<String, Double>> entries = customerRepo.productsPricesSum();
 
@@ -42,7 +42,7 @@ public class StatsController {
 
 
     @RequestMapping(value = "getProductsTrend", produces = "application/json")
-    @ResponseBody
+    //@ResponseBody
     public ChartData getProductsTrend() {
         List<GroupByEntry<String, Integer>> entries = productRepo.countAllByCustomers();
 
@@ -58,7 +58,7 @@ public class StatsController {
     }
 
     @RequestMapping(value = "/getProductsCustomersBar", produces = "application/json")
-    @ResponseBody
+    //@ResponseBody
     public ChartData getProductsCustomersBar() {
         List<GroupByEntry<String, Integer>> entries = customerRepo.countAllByProducts();
 

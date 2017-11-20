@@ -25,14 +25,14 @@ public class CustomerController {
 
     //return all customers found in db
     @RequestMapping(value = "/getCustomers", produces = "application/json")
-    public @ResponseBody
+    public //@ResponseBody
     List<Customer> getCustomers() {
         return (List<Customer>) repo.findAll();
     }
 
     //add a new customer or update an existing customer, from a json
     @RequestMapping(value = "/addCustomer", method = RequestMethod.PUT, produces = "application/json")
-    @ResponseBody
+    //@ResponseBody
     public ResponseEntity<String> addCustomer(@RequestBody Customer customer, BindingResult res) {
         if (res.hasErrors()) {
             return new ResponseEntity<String>("{\"message\":\"" + res.getAllErrors().toString() + "\"}", HttpStatus.INTERNAL_SERVER_ERROR);
@@ -44,7 +44,7 @@ public class CustomerController {
 
     //remove a customer by id
     @RequestMapping(value = "/removeCustomer/{id}", method = RequestMethod.DELETE)
-    @ResponseBody
+    //@ResponseBody
     public ResponseEntity<String> removeCustomer(@PathVariable Integer id) {
 
         repo.deleteById(id);
