@@ -38,7 +38,6 @@ left-pills {
 .pink-button {
     background-color: #a26997;
     border-color: #a26997;
-
 }
 
 .pink-button:not([disabled]):not(.disabled):active, .pink-button:not([disabled]):not(.disabled).active, .show > .pink-button.dropdown-toggle {
