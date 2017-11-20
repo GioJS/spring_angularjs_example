@@ -35,6 +35,18 @@ left-pills {
     width: auto;
 }
 
+.pink-button {
+    background-color: #a26997;
+    border-color: #a26997;
+
+}
+
+.pink-button:not([disabled]):not(.disabled):active, .pink-button:not([disabled]):not(.disabled).active, .show > .pink-button.dropdown-toggle {
+    box-shadow: 0 0 0 0.2rem rgba(162, 81, 126, 0.5);
+    background-color: #a26997;
+    border-color: #a26997;
+}
+
 .card-chart {
     width: 80%;
     display: block;
