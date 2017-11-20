@@ -21,12 +21,12 @@
 
 
         <div class = "btn-group" data-toggle = "buttons">
-            <label  ng-click = "customer.sex='M'" ng-class="{'active':customer.sex=='M'}" class = "btn btn-sm btn-primary">
-                <input type = "radio" checked value="M" name="sex" ng-model="customer.sex"> M
+            <label  ng-click = "changeSex(customer)" ng-class="{'active':customer.sex=='M'}" class = "btn btn-sm btn-primary">
+                <input type = "radio" checked value="M" name="sex"> M
             </label>
 
-            <label ng-click = "customer.sex='F'" ng-class="{'active':customer.sex=='F'}" class = "btn btn-sm btn-primary">
-                <input type = "radio" value="F" name="sex" ng-model="customer.sex"> F
+            <label ng-click = "changeSex(customer)"" ng-class="{'active':customer.sex=='F'}" class = "btn btn-sm btn-primary">
+                <input type = "radio" value="F" name="sex"> F
             </label>
 
         </div>

@@ -67,6 +67,15 @@ angular.module('customerList')
                 customer: '='
             },
             controller: ['$scope', '$rootScope', 'Customer', function ($scope, $rootScope, customerSrv) {
+
+                $scope.changeSex = function(customer){
+                    if(customer.sex == 'M'){
+                        customer.sex = 'F';
+                    }else {
+                        customer.sex = 'M';
+                    }
+                };
+
                 $scope.updateCustomer = function (customer) {
                     console.log(customer);
                     customerSrv.addCustomer(customer).then(function (result) {
