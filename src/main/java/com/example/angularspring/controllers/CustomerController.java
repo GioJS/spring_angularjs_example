@@ -17,7 +17,7 @@ import com.example.angularspring.entities.Customer;
 import com.example.angularspring.repositories.CustomerRepository;
 
 //rest controller on customers resource
-@RestController
+@RestController //@Controller & @ResponseBody
 @RequestMapping("/customers")
 public class CustomerController {
     @Autowired
