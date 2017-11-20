@@ -27,7 +27,7 @@ public class ProductController {
     //add a new customer or update an existing customer, from a json
     @RequestMapping(value="/addProduct", method= RequestMethod.PUT, produces="application/json")
     @ResponseBody
-    public ResponseEntity<String> addCustomer(@RequestBody Product product, BindingResult res) {
+    public ResponseEntity<String> addProduct(@RequestBody Product product, BindingResult res) {
         if(res.hasErrors()) {
             return new ResponseEntity<String>("{\"message\":\""+res.getAllErrors().toString()+"\"}", HttpStatus.INTERNAL_SERVER_ERROR);
         }
