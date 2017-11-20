@@ -43,7 +43,7 @@ public class CustomerController {
     }
 
     //remove a customer by id
-    @RequestMapping(value = "/removeCustomer/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/removeCustomer/{id}", method = RequestMethod.DELETE, produces = "application/json")
     //@ResponseBody
     public ResponseEntity<String> removeCustomer(@PathVariable Long id) {
 
