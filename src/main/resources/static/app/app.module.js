@@ -21,19 +21,5 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'app/views/stats/stats.html'
         });
 
-}).directive('editable', function() {
-    return {
-        restrict: 'A',
-        controller: function(){
-            this.editable = false;
-        },
-        link: function($scope, $elem, $attrs) {
-            $elem.bind('click', function(){
-                $scope.$apply(function(){
-                    $scope.editable = true;
-                });
-            });
-        }
-    }
 });
 
