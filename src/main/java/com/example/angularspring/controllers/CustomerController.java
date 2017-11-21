@@ -35,11 +35,11 @@ public class CustomerController {
     //@ResponseBody
     public ResponseEntity<String> addCustomer(@RequestBody Customer customer, BindingResult res) {
         if (res.hasErrors()) {
-            return new ResponseEntity<String>("{\"message\":\"" + res.getAllErrors().toString() + "\"}", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>("{\"message\":\"" + res.getAllErrors().toString() + "\"}", HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
         repo.save(customer);
-        return new ResponseEntity<String>("{\"message\":\"success\"}", HttpStatus.OK);
+        return new ResponseEntity<>("{\"message\":\"success\"}", HttpStatus.OK);
     }
 
     //remove a customer by id
@@ -49,10 +49,10 @@ public class CustomerController {
 
         Customer c = repo.findOne(id);
         if(c == null) {
-            return new ResponseEntity<String>("{\"message\":\"customer not found\"}", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("{\"message\":\"customer not found\"}", HttpStatus.NOT_FOUND);
         }
         repo.delete(c);
-        return new ResponseEntity<String>("{\"message\":\"success\"}", HttpStatus.OK);
+        return new ResponseEntity<>("{\"message\":\"success\"}", HttpStatus.OK);
 
     }
 

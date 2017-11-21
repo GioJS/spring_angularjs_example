@@ -28,10 +28,10 @@ public class ProductController {
     //@ResponseBody
     public ResponseEntity<String> addProduct(@RequestBody Product product, BindingResult res) {
         if (res.hasErrors()) {
-            return new ResponseEntity<String>("{\"message\":\"" + res.getAllErrors().toString() + "\"}", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>("{\"message\":\"" + res.getAllErrors().toString() + "\"}", HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
         repo.save(product);
-        return new ResponseEntity<String>("{\"message\":\"success\"}", HttpStatus.OK);
+        return new ResponseEntity<>("{\"message\":\"success\"}", HttpStatus.OK);
     }
 }
