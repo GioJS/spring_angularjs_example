@@ -42,7 +42,7 @@ public class StatsController {
 
     @RequestMapping(value = "getProductsTrend", produces = "application/json")
     //@ResponseBody
-    public ChartData getProductsTrend() {
+    public ChartData<Integer> getProductsTrend() {
         List<GroupByEntry<String, Integer>> entries = productRepo.countAllByCustomers();
 
         List<String> names = new ArrayList<>();
@@ -58,7 +58,7 @@ public class StatsController {
 
     @RequestMapping(value = "/getProductsCustomersBar", produces = "application/json")
     //@ResponseBody
-    public ChartData getProductsCustomersBar() {
+    public ChartData<Integer> getProductsCustomersBar() {
         List<GroupByEntry<String, Integer>> entries = customerRepo.countAllByProducts();
 
         List<String> names = new ArrayList<>();
